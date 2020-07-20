@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options
 TELEGRAM_BASE_URL = f'https://api.telegram.org/bot{os.getenv("TELEGRAM_TOKEN")}/'
 
 WINDOW_SIZE = "1920,1080"
-CHROMEDRIVER_PATH = '/Users/tung491/scripts/chromedriver'
+CHROMEDRIVER_PATH = '/Users/tung491/Downloads/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument(f"--window-size={WINDOW_SIZE}")
@@ -90,6 +90,7 @@ def main():
             if post[0] in prv_posts:
                 continue
             send_message('\n'.join(post))
+            print('\n'.join(post))
             writer.writerow(post)
 
     driver.close()
